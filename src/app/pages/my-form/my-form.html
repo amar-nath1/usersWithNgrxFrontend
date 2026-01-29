@@ -1,0 +1,8 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" placeholder="Name" />
+    <input formControlName="email" placeholder="Email" />
+    <input formControlName="age" placeholder="Age" />
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>
+
+<div>{{usersData | json}}</div>
