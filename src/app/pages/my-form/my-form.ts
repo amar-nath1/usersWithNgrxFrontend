@@ -31,7 +31,7 @@ public formDataList$: Observable<any>;
       console.log('Form Data List from Store:', data);
     });
 
-    this.store.dispatch(loadUsers());
+  
   }
 
   onSubmit() {
