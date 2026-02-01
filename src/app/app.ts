@@ -4,7 +4,7 @@ import { MyForm } from "./pages/my-form/my-form";
 
 @Component({
   selector: 'app-root',
-  imports: [MyForm],
+  imports: [MyForm, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

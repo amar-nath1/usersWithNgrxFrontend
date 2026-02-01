@@ -4,11 +4,12 @@ import { Store } from '@ngrx/store';
 import { addFormData, loadUsers } from '../../store/actions/formData.actions';
 import { Observable } from 'rxjs';
 import { formDataSelector, formDataFeatureSelector } from '../../store/selector/formData.selector';
-import { JsonPipe } from '@angular/common';
+import { JsonPipe, NgForOf, KeyValuePipe } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-my-form',
-  imports: [ReactiveFormsModule, JsonPipe],
+  imports: [ReactiveFormsModule, KeyValuePipe, JsonPipe, NgForOf, RouterLink],
   templateUrl: './my-form.html',
   styleUrl: './my-form.scss',
 })

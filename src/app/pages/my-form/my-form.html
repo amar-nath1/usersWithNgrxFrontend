@@ -1,8 +1,31 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <input formControlName="name" placeholder="Name" />
-    <input formControlName="email" placeholder="Email" />
-    <input formControlName="age" placeholder="Age" />
-    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+<form class="my-form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <input class="form-input" formControlName="name" placeholder="Name" />
+        <input class="form-input" formControlName="email" placeholder="Email" />
+        <input class="form-input" formControlName="age" placeholder="Age" />
+        <button class="btn" type="submit" [disabled]="myForm.invalid">Submit</button>
+    </div>
 </form>
 
-<div>{{usersData | json}}</div>
+<div class="table-container">
+    <table class="users-table">
+    <thead>
+        <tr>
+            <td>Sn.</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Age</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of usersData;let i=index">
+            <td>{{i+1}}</td>
+            <td *ngFor="let item of user | keyvalue">{{item.value}}</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+<footer>
+    <a routerLink="/admin">Go to Admin</a>
+</footer>

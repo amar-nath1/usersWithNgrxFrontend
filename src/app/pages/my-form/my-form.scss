@@ -1,0 +1,105 @@
+/* Form layout */
+.my-form {
+	margin-bottom: 1.25rem;
+
+	.form-row {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	.form-input {
+		padding: 0.5rem 0.75rem;
+		border: 1px solid #d0d7de;
+		border-radius: 6px;
+		min-width: 160px;
+		flex: 1 1 160px;
+		box-sizing: border-box;
+		background: #fff;
+		color: #111827;
+	}
+
+	.btn {
+		padding: 0.5rem 0.9rem;
+		background: #2563eb;
+		color: #fff;
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		transition: background 0.15s ease;
+
+		&:disabled {
+			opacity: 0.6;
+			cursor: not-allowed;
+		}
+
+		&:hover:not(:disabled) {
+			background: #1e4fd6;
+		}
+	}
+}
+
+/* Table container for horizontal scroll on small screens */
+.table-container {
+	overflow-x: auto;
+	border-radius: 8px;
+	box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+/* Users table styling */
+.users-table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 600px;
+	background: #fff;
+	font-family: inherit;
+
+	thead td {
+		font-weight: 600;
+		text-align: left;
+		padding: 0.75rem 1rem;
+		background: #f8fafc;
+		color: #111827;
+		border-bottom: 1px solid #e6e9ef;
+	}
+
+	tbody td {
+		padding: 0.75rem 1rem;
+		border-bottom: 1px solid #f1f5f9;
+		color: #374151;
+		vertical-align: middle;
+	}
+
+	tbody tr:nth-child(even) {
+		background: #fbfdff;
+	}
+
+	tbody tr:hover {
+		background: #f1f5f9;
+	}
+
+	td:first-child {
+		width: 48px;
+		text-align: center;
+		font-weight: 600;
+		color: #111827;
+	}
+}
+
+/* Responsive tweaks */
+@media (max-width: 560px) {
+	.my-form .form-row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.my-form .form-input {
+		width: 100%;
+	}
+
+	.users-table {
+		min-width: 0;
+	}
+}
+
